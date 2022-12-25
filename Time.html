@@ -1,0 +1,174 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+	<title>Watch</title>
+    <link rel="stylesheet" type="text/css" href="Time.css"/>
+</head>
+<body onload="FirstTab();">
+<div class="mainBox">
+       
+        <div class="tab">
+          <a class="tabButton" href="#content1" id="DataAndTime">Data&Time</a>
+          <a class="tabButton" href="#content2" id="TimeZone">TimeZone</a></button>
+        </div>
+
+         <div class="content1" id="content1">
+        <div class="left">
+            <select class="month" id="sid" onchange="selectcity()">
+                <option>December</option>
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option >July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+            </select>
+            <div class="year">
+                <div id="year" name="year" class="yearNumber">
+                    2022
+                </div>
+                <div class="yearAdd" onclick="YearAdd();">
+
+                </div>
+                <div class="yearMinus" onclick="YearMinus();">
+
+                </div>
+            </div>
+            <div class='calendar' id='calendar'></div>
+        </div>
+
+        <div class="right">
+            <div class="watchBox">
+                <div class="line">
+                    <div id="hour" name="hour" class="number">
+                        12
+                    </div>
+                    <div class="add" onclick="HourAdd();">
+                        
+                    </div>
+                    <div class="minus" onclick="HourMinus()">
+                        
+                    </div>
+                </div>
+                <div class="line">
+                    <div id="minute" name="minute" class="number">
+                        23
+                    </div>
+                    <div class="add" onclick="MinuteAdd();">
+    
+                    </div>
+                    <div class="minus" onclick="MinuteMinus();">
+    
+                    </div>
+                </div>
+                <div class="line">
+                    <div id="second" name="second" class="number">
+                        25
+                    </div>
+                    <div class="add" onclick="SecondAdd();">
+                        
+                    </div>
+                    <div class="minus" onclick="SecondMinus();">
+                        
+                    </div>
+                </div>
+                <div class="AMorPM">
+                AM <input type="radio" value="AM" name="radio" id="AM" /><br/>
+                PM <input type="radio" value="PM" name="radio" id="PM" checked/><br/>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+        <div class="content2" id="content2" onclick="RecordZone();">
+            <div class="mapBox">
+            <select class="place" id="mapSelect" onchange="TimeZoneChange()">
+                <option grade="1" value="1">1</option>
+                <option grade="2" value="2">2</option>
+                <option grade="3" value="3">3</option>
+                <option grade="4" value="4">4</option>
+                <option grade="5" value="5">5</option>
+                <option grade="6" value="6">6</option>
+                <option grade="7" value="7">7</option>
+                <option grade="8" value="8">8</option>
+                <option grade="9" value="9">9</option>
+                <option grade="10" value="10">10</option>
+                <option grade="11" value="11">11</option>
+                <option grade="12" value="12">12</option>
+                <option grade="13" value="13">13</option>
+                <option grade="14" value="14">14</option>
+                <option grade="15" value="15">15</option>
+                <option grade="16" value="16">16</option>
+                <option grade="17" value="17">17</option>
+                <option grade="18" value="18">18</option>
+                <option grade="19" value="19">19</option>
+                <option grade="20" value="20">20</option>
+                <option grade="21" value="21">21</option>
+                <option grade="22" value="22">22</option>
+                <option grade="23" value="23">23</option>
+                <option grade="24" value="24">24</option>
+            </select>
+            <div class="topArow" id="topArow"></div>
+            <div class="map"></div>
+            <div  class="choose" id="chooseWhat">
+            <input type="checkbox" id="choose" value="choose" checked="checked" onchange="Choose();"/>Automatically adjust clock for daylight saving changes
+            </div>
+            </div>
+    </div>      
+    
+        
+        
+        <div class="bottom">
+            <button class="button" onclick="Close();">OK</button>
+            <button class="button" onclick="Cancel();">Cancel</button>
+            <button class="button" onclick="Apply()">Apply</button>
+        </div>
+       <!-- 弹窗 -->
+        <div class="modal">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="mb_revise" id="whichButton"></div>
+                    <div>===========</div>
+                    <div>
+                        year = <span id="yearIn"></span>
+                    </div>
+                    <div>
+                        month = <span id="monthIn"></span>
+                    </div>
+                    <div>
+                        day = <span id="dayIn"></span>
+                    </div>
+                    <div>
+                        hour = <span id="hourIn"></span>
+                    </div>
+                    <div>
+                        minute = <span id="minuteIn"></span>
+                    </div>
+                    <div>
+                        second = <span id="secondIn"></span>
+                    </div>
+                    <div>
+                        timeZone = <span id="timeZoneIn"></span>
+                    </div>
+                    <div>
+                        autoDaylight = <span id="autoDaylightIn"></span>
+                    </div> 
+                    <div>===========</div>
+                    <div id="applyIn"></div>
+                    <div>
+                        <!--关闭弹窗-->
+                        <button class="cancel">确定</button>
+                    </div>
+                </divdiv>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="Time.js"></script>
+</html>
